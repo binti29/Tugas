@@ -2,12 +2,12 @@
 $host = "localhost";
 $user = "root";
 $pass = "arlyn";
-$dbname = "ujian";
+$dbname = "nilai";
 
 $koneksi = mysqli_connect($host, $user, $pass, $dbname);
 
 /*if($koneksi){
-echo "Sekses";
+echo "Sukses";
 }else{
  echo "Koneksi gagal";
 }*/

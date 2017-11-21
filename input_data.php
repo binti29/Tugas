@@ -4,25 +4,25 @@ include 'koneksi.php';
 if (isset($_POST['submit'])) {
 	$nomor = $_POST['nomor'];
 	$nama = $_POST['nama'];
-	$jurusan = $_POST['jurusan'];
 	$jenis = $_POST['jenis'];
+	$jurusan = $_POST['jurusan'];
+	$indonesia = $_POST['bhs_indonesia'];
+	$inggris = $_POST['bhs_inggris'];
 	$matematika = $_POST['matematika'];
-	$inggris = $_POST['b_inggris'];
-	$indonesia = $_POST['b_indonesia'];
-	$produktif1 = $_POST['produktif1'];
-	$produktif2 = $_POST['produktif2'];
-	$produktif3 = $_POST['produktif3'];
-	$produktif4 = $_POST['produktif4'];
+	$produktif = $_POST['produktif'];
+	$jumlah = $_POST['jumlah'];
+	$keterangan = $_POST['keterangan'];
+	
 
-$sql = "INSERT INTO siswa(no_ujian, nama_siswa, jurusan, id_jk, matematika, b_inggris, b_indonesia, produktif1, produktif2, produktif3, produktif4) VALUES ('$nomor','$nama','$jurusan','$jenis','$matematika','$inggris','$indonesia','$produktif1','$produktif2','$produktif3','$produktif4')";
+$sql = "INSERT INTO siswa(nomor_ujian, nama_siswa, id_jenis, id_jurusan, bhs_indonesia, bhs_inggris, matematika, produktif, jumlah, id_keterangan) VALUES ('$nomor','$nama','$jenis','$jurusan','$indonesia','$inggris','$matematika','$produktif','$jumlah','$keterangan')";
 
 $data = mysqli_query($koneksi,$sql);
 //var_dump($data);
-	/*if ($data) {
+	if ($data) {
 	echo "Data berhasil di simpan";
 	} else{
 	echo "Data gagal disimpan";
-	}*/
+	}
 
 }
 ?>
@@ -39,27 +39,34 @@ $data = mysqli_query($koneksi,$sql);
 		<input type="number" name="nomor"><br/><br/>
 		<label>Nama Siswa : </label>
 		<input type="text" name="nama"><br/><br/>
-		<label>Jurusan : </label>
-		<input type="text" name="jurusan"><br/><br/>
 		<label>Jenis Kelamin : </label>
 		<select name="jenis">
 			<option value="1">Laki-Laki</option>
 			<option value="2">Perempuan</option>
 		</select><br/><br/>
+		<label>Jurusan : </label>
+		<select name="jurusan">
+			<option value="1">RPL</option>
+			<option value="2">TKR</option>
+			<option value="3">TO</option>
+			<option value="4">TPHP</option>
+			<option value="5">TSM</option>
+		</select><br/><br/>
+		<label>Bahasa Indonesia : </label>
+		<input type="number" name="bhs_indonesia"><br/><br/>
+		<label>Bahasa Inggris : </label>
+		<input type="number" name="bhs_inggris"><br/><br/>
 		<label>Matematika : </label>
 		<input type="number" name="matematika"><br/><br/>
-		<label>Bahasa Indonesia : </label>
-		<input type="number" name="b_indonesia"><br/><br/>
-		<label>Bahasa Inggris : </label>
-		<input type="number" name="b_inggris"><br/><br/>
-		<label>Produktif 1 : </label>
-		<input type="number" name="produktif1"><br/><br/>
-		<label>Produktif 2 : </label>
-		<input type="number" name="produktif2"><br/><br/>
-		<label>Produktif 3 : </label>
-		<input type="number" name="produktif3"><br/><br/>
-		<label>Produktif 4 : </label>
-		<input type="number" name="produktif4"><br/><br/>
+		<label>Produktif : </label>
+		<input type="number" name="produktif"><br/><br/>
+		<label>Jumlah : </label>
+		<input type="number" name="jumlah"><br/><br/>
+		<label>Keterangan :</label>
+		<select name="keterangan">
+			<option value="1">Lulus</option>
+			<option value="2">Tidak Lulus</option>
+		</select><br/><br/>
 		<input type="submit" name="submit" value="Simpan">
 	</form>
 </body>
