@@ -6,8 +6,8 @@ if (isset($_POST['submit'])) {
 	$nama = $_POST['nama'];
 	$jenis = $_POST['jenis'];
 	$jurusan = $_POST['jurusan'];
-	$indonesia = $_POST['bhs_indonesia'];
-	$inggris = $_POST['bhs_inggris'];
+	$indonesia = $_POST['indonesia'];
+	$inggris = $_POST['inggris'];
 	$matematika = $_POST['matematika'];
 	$produktif = $_POST['produktif'];
 	$jumlah = $_POST['jumlah'];
@@ -18,11 +18,11 @@ $sql = "INSERT INTO siswa(nomor_ujian, nama_siswa, id_jenis, id_jurusan, bhs_ind
 
 $data = mysqli_query($koneksi,$sql);
 //var_dump($data);
-	if ($data) {
+	/*if ($data) {
 	echo "Data berhasil di simpan";
 	} else{
 	echo "Data gagal disimpan";
-	}
+	}*/
 
 }
 ?>
@@ -33,7 +33,7 @@ $data = mysqli_query($koneksi,$sql);
 	<title>Input Data</title>
 </head>
 <body>
-	<h2><u>Form Input Data</h2></u>
+	<center><h2><u>Form Input Data</h2></u></center>
 	<form method="POST">
 		<label>No Ujian : </label>
 		<input type="number" name="nomor"><br/><br/>
@@ -53,9 +53,9 @@ $data = mysqli_query($koneksi,$sql);
 			<option value="5">TSM</option>
 		</select><br/><br/>
 		<label>Bahasa Indonesia : </label>
-		<input type="number" name="bhs_indonesia"><br/><br/>
+		<input type="number" name="indonesia"><br/><br/>
 		<label>Bahasa Inggris : </label>
-		<input type="number" name="bhs_inggris"><br/><br/>
+		<input type="number" name="inggris"><br/><br/>
 		<label>Matematika : </label>
 		<input type="number" name="matematika"><br/><br/>
 		<label>Produktif : </label>
