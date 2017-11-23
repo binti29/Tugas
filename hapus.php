@@ -1,15 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="refresh" content="0;url=index.php">
+</head>
+<body>
+
 <?php
-include 'koneksi.php';
-$nomor_ujian = $_GET['nomor_ujian'];
+include'koneksi.php';
+$id = $_GET['id_siswa'];
 
-$sql = "DELETE from siswa WHERE nomor_ujian='$nomor_ujian'";
+$sql = "DELETE from siswa WHERE id_siswa='$id'";
 
-$siswa = mysqli_query($koneksi,$sql);
+$data = mysqli_query($koneksi,$sql);
 
-	if ($siswa) {
-		echo "barang berhasil di hapus<br>";
-	}else{
-		echo "barang gagal di hapus";
-		echo mysqli_error($koneksi);
-	}
+
+	if ($data) {
+		echo "<script>alert('data berhasil dihapus');
+document.location.href='index.php'</script>\n";
+} else {
+echo "<script>alert('data gagal dihapus');
+document.location.href='index.php'</script>\n";
+}
 ?>
+</body>
+</html>
