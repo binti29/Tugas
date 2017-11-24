@@ -1,6 +1,7 @@
 <?php
 
 include '../include/koneksi.php';
+$id_siswa = $_GET['id_siswa']
 
 if(isset($_POST['submit'])){
 	$nomor_ujian = $_POST['nomor_ujian'];
@@ -15,7 +16,7 @@ if(isset($_POST['submit'])){
 	$id_keterangan = $_POST['id_keterangan'];
 
 
-	$sql = "UPDATE siswa SET nomor_ujian='$nomor_ujian',nama_siswa='$nama_siswa',id_jenis='$id_jenis',id_jurusan='$id_jurusan',bhs_indonesia='$bhs_indonesia',bhs_inggris='$bhs_inggris',matematika='$matematika',produktif='$produktif',jumlah='$jumlah',id_keterangan='$id_keterangan'";
+	$sql = "UPDATE siswa SET nomor_ujian='$nomor_ujian',nama_siswa='$nama_siswa',id_jenis='$id_jenis',id_jurusan='$id_jurusan',bhs_indonesia='$bhs_indonesia',bhs_inggris='$bhs_inggris',matematika='$matematika',produktif='$produktif',jumlah='$jumlah',id_keterangan='$id_keterangan' WHERE id_siswa = '$id_siswa'";
 
 	$siswa = mysqli_query($koneksi,$sql);
 
@@ -27,7 +28,7 @@ if(isset($_POST['submit'])){
 	}
 }
 
-$sql = "SELECT nomor_ujian, nama_siswa, id_jenis, id_jurusan, bhs_indonesia, bhs_inggris, matematika, produktif, jumlah, id_keterangan FROM siswa";
+$sql = "SELECT nomor_ujian, nama_siswa, id_jenis, id_jurusan, bhs_indonesia, bhs_inggris, matematika, produktif, jumlah, id_keterangan FROM siswa WHERE id_siswa ='$id_siswa'";
 
 $data = mysqli_query($koneksi, $sql);
 
