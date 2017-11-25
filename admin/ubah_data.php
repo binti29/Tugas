@@ -68,7 +68,7 @@ $siswa = mysqli_fetch_assoc($data);
 
 		<div class="form-group">
 		<label>Nama Siswa  </label>
-		<input type="text" name="nama_siswa" value="<?php echo $siswa['nomor_ujian'];?>" class="form-control" required/>
+		<input type="text" name="nama_siswa" value="<?php echo $siswa['nama_siswa'];?>" class="form-control" required/>
 		</div>
 
 		<div class="form-group">
