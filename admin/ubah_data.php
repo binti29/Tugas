@@ -1,7 +1,7 @@
 <?php
 
 include '../include/koneksi.php';
-$id_siswa = $_GET['id_siswa']
+$id_siswa = $_GET['id_siswa'];
 
 if(isset($_POST['submit'])){
 	$nomor_ujian = $_POST['nomor_ujian'];
