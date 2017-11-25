@@ -40,7 +40,7 @@ $siswa = mysqli_fetch_assoc($data);
 <!DOCTYPE html>
 <html>
 <head>	
-	<title>Input Data siswa</title>
+	<title>Edit Data siswa</title>
 	
 	<link rel="shortcut icon" href="../images/un.jpeg">
 	<link rel="stylesheet" type="text/css" href="../include/css/bootstrap.css">
