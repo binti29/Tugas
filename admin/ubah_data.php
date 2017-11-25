@@ -21,11 +21,12 @@ if(isset($_POST['submit'])){
 	$siswa = mysqli_query($koneksi,$sql);
 
 	if ($siswa) {
-		echo "data berhasil di simpan<br>";
-	}else{
-		echo "data gagal disimpan";
-		echo mysqli_error($koneksi);
-	}
+		echo "<script>alert('data berhasil di ubah');
+document.location.href='index.php'</script>\n";
+} else {
+echo "<script>alert('data gagal di ubah');
+document.location.href='index.php'</script>\n";
+}
 }
 
 $sql = "SELECT nomor_ujian, nama_siswa, id_jenis, id_jurusan, bhs_indonesia, bhs_inggris, matematika, produktif, jumlah, id_keterangan FROM siswa WHERE id_siswa ='$id_siswa'";
